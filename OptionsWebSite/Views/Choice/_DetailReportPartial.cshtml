@@ -1,0 +1,72 @@
+﻿@model IEnumerable<DiplomaDataModel.Models.Choice>
+
+@{ int yearterm = ViewBag.Message;}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstChoiceOptionId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecondChoiceOptionId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThirdChoiceOptionId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FourthChoiceOptionId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectionDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YearTermId)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.YearTermId == yearterm)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Option1.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Option2.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Option3.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Option4.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SelectionDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YearTerm.Description)
+            </td>
+        </tr>
+        }
+    }
+
+</table>

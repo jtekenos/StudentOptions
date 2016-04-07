@@ -1,0 +1,5 @@
+﻿@model DiplomaDataModel.Models.YearTerm
+
+@Html.DropDownListFor(model => model.Term, ViewBag.YearTermList as SelectList, 
+    new { id="yearTermSelected", @class = "form-control", Style = "width: 300px" })
+
